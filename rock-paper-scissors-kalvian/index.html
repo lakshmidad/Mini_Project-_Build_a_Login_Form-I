@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock • Paper • Scissors</title>
+  <!-- Custom Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header class="app-header">
+    <h1 class="title" aria-label="Rock Paper Scissors">Rock • Paper • Scissors</h1>
+    <p class="subtitle">Best of luck! First to 5 wins.</p>
+  </header>
+
+  <main class="app-main" role="main">
+    <!-- Scoreboard -->
+    <section class="scoreboard" aria-live="polite">
+      <div class="score">
+        <h2>Player</h2>
+        <div id="playerScore" class="score-value">0</div>
+      </div>
+      <div class="versus" aria-hidden="true">vs</div>
+      <div class="score">
+        <h2>Computer</h2>
+        <div id="computerScore" class="score-value">0</div>
+      </div>
+    </section>
+
+    <!-- Round status -->
+    <section class="status" aria-live="polite">
+      <div id="roundResult" class="round-result">Make your move!</div>
+      <div class="picks">
+        <div class="pick">
+          <span class="label">You</span>
+          <img id="playerPick" src="assets/img/question.svg" alt="Your pick" />
+        </div>
+        <div class="pick">
+          <span class="label">CPU</span>
+          <img id="computerPick" src="assets/img/question.svg" alt="Computer pick" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls" aria-label="Select your move">
+      <button class="btn choice" data-choice="rock" aria-label="Choose Rock">
+        <img src="assets/img/rock.svg" alt="rock icon" />
+        <span>Rock</span>
+      </button>
+      <button class="btn choice" data-choice="paper" aria-label="Choose Paper">
+        <img src="assets/img/paper.svg" alt="paper icon" />
+        <span>Paper</span>
+      </button>
+      <button class="btn choice" data-choice="scissors" aria-label="Choose Scissors">
+        <img src="assets/img/scissors.svg" alt="scissors icon" />
+        <span>Scissors</span>
+      </button>
+    </section>
+
+    <section class="actions">
+      <button id="resetBtn" class="btn ghost" aria-label="Reset game">Reset</button>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Made with ❤️ — Custom theme, animations, and sounds.</p>
+    <p class="note">Include your Copilot prompts screenshot as: assets/copilot-prompts.png</p>
+  </footer>
+
+  <!-- Sounds -->
+  <audio id="sfxClick" src="assets/sfx/click.mp3" preload="auto"></audio>
+  <audio id="sfxWin" src="assets/sfx/win.mp3" preload="auto"></audio>
+  <audio id="sfxLose" src="assets/sfx/lose.mp3" preload="auto"></audio>
+  <audio id="sfxDraw" src="assets/sfx/draw.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
